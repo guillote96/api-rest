@@ -1,9 +1,11 @@
 'use strict'
+
 var validator= require('validator');
 var Article = require('../models/article');
 
 var path = require('path');
 var fs = require('fs');
+
 //var split = require('split');
 var controller = {
     datosCursos: (req, res)=>{
@@ -203,7 +205,6 @@ var controller = {
          var file_split= file_path.split("/");
          var name = file_split[2];
          var ext= name.split('\.')[1];
-         console.log(ext);
 
          if(ext != 'png' && ext != 'jpg' && ext != 'gif' && ext != 'jpeg'){
              fs.unlink(file_path,(err)=>{
@@ -235,12 +236,28 @@ var controller = {
            
 
          }
-
-
+        },
+         getImage:(req,res)=>{
+             var nombre = req.params.name;
+             var directorio = './upload/articles/'+nombre;
+             fs.readFile(directorio, (err) => {
+                if (err){
+                    return res.status(400).send({
+                        status:"error",
+                        message: "No sencontró el archivo!"
+                     });
         
+                }else{
+                    return res.sendFile(path.resolve(directorio));
+                }
+                
+              });
+              
 
-        
+           
 
-     }
+         }
+
+
 }
 module.exports= controller;
