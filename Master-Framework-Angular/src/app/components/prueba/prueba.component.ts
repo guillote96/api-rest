@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./prueba.component.css']
 })
 export class PruebaComponent implements OnInit {
-
-  constructor() { }
+  public mostrarPeliculas:boolean;
+  constructor() { 
+    this.mostrarPeliculas = true;
+  }
 
   ngOnInit(): void {
+  }
+
+  ocultarPeliculas(){
+    this.mostrarPeliculas=false;
   }
 
 }

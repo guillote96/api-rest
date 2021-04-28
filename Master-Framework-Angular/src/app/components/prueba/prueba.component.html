@@ -1,1 +1,6 @@
 <p>prueba works!</p>
+<button (click)="ocultarPeliculas()">Ocultar Componente</button>
+
+<div *ngIf="mostrarPeliculas">
+  <app-peliculas></app-peliculas>
+</div>
