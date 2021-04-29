@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-prueba',
@@ -6,16 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./prueba.component.css']
 })
 export class PruebaComponent implements OnInit {
-  public mostrarPeliculas:boolean;
-  constructor() { 
-    this.mostrarPeliculas = true;
-  }
+
+  public nombre:string;
+
+  constructor(
+    private _route:ActivatedRoute,
+    private _router:Router
+  ) {}
 
   ngOnInit(): void {
+    this._route.params.subscribe((parametros:Params)=>{
+         this.nombre=parametros.nombre;
+    });
   }
 
-  ocultarPeliculas(){
-    this.mostrarPeliculas=false;
-  }
 
 }

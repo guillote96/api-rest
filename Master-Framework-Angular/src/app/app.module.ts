@@ -9,6 +9,9 @@ import { SliderComponent } from './components/slider/slider.component';
 import { SiderbarComponent } from './components/siderbar/siderbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { HomeComponent } from './components/home/home.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     SliderComponent,
     SiderbarComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HomeComponent,
+    BlogComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
