@@ -8,6 +8,7 @@ import { Pelicula } from 'src/app/models/pelicula';
 })
 export class PeliculasComponent implements OnInit,DoCheck,OnDestroy {
   public peliculas:Pelicula[];
+  public favorita:Pelicula;
   constructor() { 
     this.peliculas =[
       new Pelicula("Harry Potter y la Piedra Filosofal","https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2016/12/harry-potter-piedra-filosofal.jpg?itok=1_pqQxcN"),
@@ -22,6 +23,10 @@ export class PeliculasComponent implements OnInit,DoCheck,OnDestroy {
   }
   ngOnDestroy(){
     console.log("El componente Pelicula se va a eliminar");
+  }
+
+  mostrarFavorita(event){
+     this.favorita=event;
   }
 
 

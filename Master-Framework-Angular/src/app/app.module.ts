@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { HomeComponent } from './components/home/home.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { PeliculaComponent } from './components/pelicula/pelicula.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormularioComponent } from './components/formulario/formulario.componen
     PageNotFoundComponent,
     HomeComponent,
     BlogComponent,
-    FormularioComponent
+    FormularioComponent,
+    PeliculaComponent
   ],
   imports: [
     BrowserModule,

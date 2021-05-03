@@ -3,20 +3,16 @@
 <div class="center">
     <section id="content">
 
+        <div id="favorita" *ngIf="favorita">
+            <h2 class="subheader">Pelicula Favorita</h2>
+
+            {{favorita.title}}
+        </div>
+
         <h1 class="subheader">Peliculas</h1>
 
         <article class="article-item" id="article-template" *ngFor="let pelicula of peliculas">
-            <div class="image-wrap">
-                <img src="{{pelicula.image}}" alt="{{pelicula.title}}" />
-            </div>
-
-            <h2>{{pelicula.title}}</h2>
-            <span class="date">
-                Hace 5 minutos
-            </span>
-            <a href="#">Leer más</a>
-
-            <div class="clearfix"></div>
+           <app-pelicula [pelicula]="pelicula" (MarcarFavorita)="mostrarFavorita($event)"></app-pelicula>
         </article>
 
     </section>
