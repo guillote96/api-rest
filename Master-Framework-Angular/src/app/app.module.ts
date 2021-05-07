@@ -14,6 +14,8 @@ import { BlogComponent } from './components/blog/blog.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ArticleComponent } from './components/article/article.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +30,14 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     BlogComponent,
     FormularioComponent,
-    PeliculaComponent
+    PeliculaComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
