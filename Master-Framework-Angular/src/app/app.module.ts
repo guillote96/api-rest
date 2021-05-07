@@ -16,6 +16,8 @@ import { PeliculaComponent } from './components/pelicula/pelicula.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ArticleComponent } from './components/article/article.component';
+import { ArticlesComponent } from './components/articles/articles.component';
+import { BuscarComponent } from './components/buscar/buscar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ArticleComponent } from './components/article/article.component';
     BlogComponent,
     FormularioComponent,
     PeliculaComponent,
-    ArticleComponent
+    ArticleComponent,
+    ArticlesComponent,
+    BuscarComponent
   ],
   imports: [
     BrowserModule,

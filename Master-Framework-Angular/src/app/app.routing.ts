@@ -6,6 +6,8 @@ import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
+import { ArticleComponent } from './components/article/article.component';
+import { BuscarComponent } from './components/buscar/buscar.component';
 
 
 const routes: Routes = [
@@ -15,6 +17,8 @@ const routes: Routes = [
     { path: 'blog', component: BlogComponent},
     { path: 'formulario', component: FormularioComponent},
     { path: 'prueba/:nombre', component: PruebaComponent},
+    { path: 'article/:id', component: ArticleComponent},
+    { path: 'buscar/:buscar', component: BuscarComponent},
     { path: '**', component: PageNotFoundComponent},
    
 

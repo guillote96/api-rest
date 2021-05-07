@@ -4,10 +4,10 @@
         <a href="#" class="btn btn-success">Crear artículo</a>
     </div>
 
-    <div id="search" class="sidebar-item">
+    <div id="search" class="sidebar-item" >
             <h3>Buscador</h3>
             <p>Encuentra el artículo que buscas</p>
-            <form>
+            <form #buscar="ngForm" (ngSubmit)="buscar()">
                 <input type="text" name="search" />
                 <input type="submit" name="submit" value="Buscar" class="btn" />
             </form>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ArticleService} from './../../services/article.service';
-import {Article } from './../../models/article';
+import { Article } from 'src/app/models/article';
+import { ArticleService } from 'src/app/services/article.service';
 
 @Component({
   selector: 'app-blog',
@@ -8,20 +8,22 @@ import {Article } from './../../models/article';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-  public articles:Article[];
+   public articles:Article[]
 
   constructor(
-    private _articleService:ArticleService
+    private _articleService: ArticleService
+    
   ) { }
 
   ngOnInit(): void {
-   this._articleService.getArticles().subscribe(response=>{
-       this.articles=response.articles;
-       console.log(this.articles);
-     },
-      error =>{
-        console.log(error);
-     })
+    this._articleService.getArticles().subscribe(response=>{
+      this.articles=response.articles;
+      console.log(this.articles);
+    },
+     error =>{
+       console.log(error);
+    })
+   
   }
 
 }

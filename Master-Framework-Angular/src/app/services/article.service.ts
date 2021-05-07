@@ -17,4 +17,11 @@ export class ArticleService {
   getArticles():Observable<any>{
     return this._httpclient.get('http://localhost:3900/api/articles');
   }
+
+  getArticle(id):Observable<any>{
+    return this._httpclient.get('http://localhost:3900/api/article/'+id);
+  }
+  buscar(buscar):Observable<any>{
+    return this._httpclient.get('http://localhost:3900/api/buscar/'+buscar);
+  }
 }
