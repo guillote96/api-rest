@@ -8,6 +8,7 @@ import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { ArticleComponent } from './components/article/article.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
+import { CrearArticuloComponent } from './components/crear-articulo/crear-articulo.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
     { path: 'prueba/:nombre', component: PruebaComponent},
     { path: 'article/:id', component: ArticleComponent},
     { path: 'buscar/:buscar', component: BuscarComponent},
+    { path: 'creararticulo', component: CrearArticuloComponent},
     { path: '**', component: PageNotFoundComponent},
    
 

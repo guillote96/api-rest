@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ArticleComponent } from './components/article/article.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
+import { CrearArticuloComponent } from './components/crear-articulo/crear-articulo.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BuscarComponent } from './components/buscar/buscar.component';
     PeliculaComponent,
     ArticleComponent,
     ArticlesComponent,
-    BuscarComponent
+    BuscarComponent,
+    CrearArticuloComponent
   ],
   imports: [
     BrowserModule,

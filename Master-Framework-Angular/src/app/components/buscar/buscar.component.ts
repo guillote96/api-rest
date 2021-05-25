@@ -25,6 +25,7 @@ export class BuscarComponent implements OnInit {
         if (response.articulos) {
           this.articulos = response.articulos;
         }
+        console.log(this.articulos);
       },
         error => {
           console.log(error);

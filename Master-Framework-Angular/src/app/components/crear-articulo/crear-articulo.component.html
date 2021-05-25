@@ -1,0 +1,39 @@
+<!--<app-slider [title]="'Crear Articulo'" [size]="'small'"></app-slider>-->
+
+<div class="center">
+    <section id="content">
+        <h1 class="subheader">Crear Articulo</h1>
+        <form #articuloForm="ngForm"  class="mid-form" (ngSubmit)='enviarFormulario()'>
+            <div class="form-group">
+                <label for="title">Titulo</label>
+                <input type="text" name="title" #title="ngModel" [(ngModel)]="article.title" required/>
+                <small *ngIf="!title.valid && title.touched">
+                    ¡El title no es valido!
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label for="content">Contenido</label>
+                <textarea name="content" #content="ngModel" [(ngModel)]="article.content" required></textarea>
+                <small *ngIf="!content.valid && content.touched">
+                    ¡Contenido Invalida!
+                </small>            
+            </div>
+
+            <div class="form-group">
+                <label for="image">Imagen</label>
+                <input type="file" name="file0"/>
+            </div>
+
+ 
+
+            <div class="clearfix"></div>
+
+            <input type="submit" value="Enviar" class="btn btn-success" />
+
+        </form>
+
+
+
+    </section>
+</div>

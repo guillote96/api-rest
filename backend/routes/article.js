@@ -11,7 +11,7 @@ var md_upload = multipart({uploadDir:'./upload/articles'});
 
 router.get('/datosCursos', ArticleController.datosCursos);
 router.get('/test', ArticleController.test);
-router.post('/article', ArticleController.save);
+router.post('/save', ArticleController.save);
 router.get('/articles', ArticleController.articles);
 router.get('/article/:id', ArticleController.getArticle);
 router.put('/article/:id', ArticleController.update);
