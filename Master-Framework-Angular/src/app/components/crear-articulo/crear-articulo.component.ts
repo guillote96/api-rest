@@ -11,6 +11,32 @@ import { Router, ActivatedRoute } from '@angular/router'
 export class CrearArticuloComponent implements OnInit {
   public article:Article;
   public status: String
+  
+  public afuConfig = {
+    multiple: false,
+    formatsAllowed: ".jpg,.png, .jpeg, .gif",
+    maxSize: "50",
+    uploadAPI:  {
+      url:"http://localhost:3900/api/upload",
+      method:"POST",
+    },
+    theme: "attachPin",
+    hideProgressBar: true,
+    hideResetBtn: true,
+    hideSelectBtn: false,
+    fileNameIndex: true,
+    replaceTexts: {
+      selectFileBtn: 'Select Files',
+      resetBtn: 'Reset',
+      uploadBtn: 'Upload',
+      dragNDropBox: 'Drag N Drop',
+      attachPinBtn: 'Attach Files...',
+      afterUploadMsg_success: 'Successfully Uploaded !',
+      afterUploadMsg_error: 'Upload Failed !',
+      sizeLimit: 'Size Limit'
+    }
+};
+
 
   constructor(
     private _articleservice:ArticleService,
@@ -39,6 +65,11 @@ export class CrearArticuloComponent implements OnInit {
         console.log("error de save");
       }
       );
+
+  }
+  imageUpload(data){
+    let nombre = data.body["image"];
+    this.article.image=nombre;
 
   }
 

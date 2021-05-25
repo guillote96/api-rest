@@ -37,7 +37,7 @@ var controller = {
             var articulo = new Article();
             articulo.title = parametros.title;
             articulo.content = parametros.content;
-            articulo.image = null;
+            articulo.image = parametros.image;
 
             console.log(articulo);
             articulo.save((err, articleStored) => {
@@ -219,21 +219,31 @@ var controller = {
 
         } else {
             var id = req.params.id;
-
-            Article.findOneAndUpdate(id, { image: name }, { new: true }, (err, imageUpload) => {
-                if (err || !imageUpload) {
-                    return res.status(500).send({
-                        status: "error",
-                        message: "No se pudo subir la Imagen"
+            if(id){
+                Article.findOneAndUpdate(id, { image: name }, { new: true }, (err, imageUpload) => {
+                    if (err || !imageUpload) {
+                        return res.status(500).send({
+                            status: "error",
+                            message: "No se pudo subir la Imagen"
+                        });
+                    }
+    
+                    return res.status(200).send({
+                        status: "success",
+                        message: imageUpload
                     });
-                }
-
-                return res.status(200).send({
-                    status: "success",
-                    message: imageUpload
+    
                 });
 
-            });
+            }else{
+                return res.status(200).send({
+                    status: "success",
+                    image: name
+                });
+
+            }
+
+            
 
 
 

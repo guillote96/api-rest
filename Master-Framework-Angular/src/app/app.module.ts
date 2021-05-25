@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app.routing';
+import { AngularFileUploaderModule } from "angular-file-uploader";
 import { AppComponent } from './app.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
@@ -43,7 +44,8 @@ import { CrearArticuloComponent } from './components/crear-articulo/crear-articu
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFileUploaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
