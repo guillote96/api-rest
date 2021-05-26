@@ -9,6 +9,7 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { ArticleComponent } from './components/article/article.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
 import { CrearArticuloComponent } from './components/crear-articulo/crear-articulo.component';
+import { EditarArticuloComponent } from './components/editar-articulo/editar-articulo.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
     { path: 'article/:id', component: ArticleComponent},
     { path: 'buscar/:buscar', component: BuscarComponent},
     { path: 'creararticulo', component: CrearArticuloComponent},
+    { path: 'editararticulo/:id', component: EditarArticuloComponent},
     { path: '**', component: PageNotFoundComponent},
    
 

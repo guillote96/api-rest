@@ -20,6 +20,7 @@ import { ArticleComponent } from './components/article/article.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
 import { CrearArticuloComponent } from './components/crear-articulo/crear-articulo.component';
+import { EditarArticuloComponent } from './components/editar-articulo/editar-articulo.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CrearArticuloComponent } from './components/crear-articulo/crear-articu
     ArticleComponent,
     ArticlesComponent,
     BuscarComponent,
-    CrearArticuloComponent
+    CrearArticuloComponent,
+    EditarArticuloComponent
   ],
   imports: [
     BrowserModule,

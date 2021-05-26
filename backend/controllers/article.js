@@ -124,6 +124,7 @@ var controller = {
     update: (req, res) => {
         var id = req.params.id;
         var params = req.body;
+        
 
         try {
             var validTitle = !validator.isEmpty(params.title);
@@ -138,8 +139,10 @@ var controller = {
         }
 
         if (validTitle && validContent) {
-            Article.findOneAndUpdate(id, params, { new: true }, (err, articleUpdated) => {
+            Article.findOneAndUpdate({"_id":id}, params, { new: true }, (err, articleUpdated) => {
+
                 if (err) {
+                    
                     return res.status(500).send({
                         status: "error",
                         message: "No se pudo Actualizar"
@@ -184,7 +187,6 @@ var controller = {
                     message: "No se encontro el Articulo que se desea deletear"
                 });
             }
-
             return res.status(200).send({
                 status: "success",
                 articleDeleted

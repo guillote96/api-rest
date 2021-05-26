@@ -37,5 +37,27 @@ export class ArticleService {
          }
        ));
     }
+
+    update (id,article):Observable<any>{
+      const articulo= JSON.stringify(article);
+      const headers = { 'content-type': 'application/json'}
+      return this._httpclient.put<any>('http://localhost:3900/api/article/'+id,articulo,{'headers':headers})
+         .pipe(
+           catchError((err) => {
+             console.error(err);
+             throw err;
+           }
+         ));
+    }
+
+    delete (id):Observable<any>{
+      return this._httpclient.delete<any>('http://localhost:3900/api/article/'+id)
+         .pipe(
+           catchError((err) => {
+             console.error(err);
+             throw err;
+           }
+         ));
+    }
     
 }

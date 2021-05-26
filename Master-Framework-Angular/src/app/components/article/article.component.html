@@ -12,8 +12,12 @@
             <p>
                 {{article.content}}
             </p>
+            
 
             <div class="clearfix"></div>
+            <a [routerLink]="['/editararticulo/',id]" class="btn btn-success">Editar artículo</a>
+            <a (click)="eliminar()" class="btn btn-danger">Eliminar</a>
+            
         </article>
     </section>
 </div>
